@@ -31,3 +31,13 @@ tel.addEventListener('input', function ()
         telError.textContent = "telephone number is not Valid";
     
 });
+//UC4:-Rule:-Password Minimum 8 Character
+const pwd = document.querySelector('#pwd');
+const passworderror = document.querySelector('.pwd-error');
+pwd.addEventListener('input', function () {
+    let passwordpattern = RegExp('^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$');
+    if (passwordpattern.test(pwd.value))
+        passworderror.textContent = ' ';
+    else
+        passworderror.textContent = 'Password is Incorrect!';
+});
