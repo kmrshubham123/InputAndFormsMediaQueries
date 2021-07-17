@@ -31,11 +31,12 @@ tel.addEventListener('input', function ()
         telError.textContent = "telephone number is not Valid";
     
 });
-//UC4:-Rule:-Password Minimum 8 Character
+//UC4:-Rule1:-Password Minimum 8 Character
+//UC5:-Password Rule2:-atleast one upper case, Rule3:-atleast one numeric Password, Rule4:-atleast one Special character 
 const pwd = document.querySelector('#pwd');
 const passworderror = document.querySelector('.pwd-error');
 pwd.addEventListener('input', function () {
-    let passwordpattern = RegExp('^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$');
+    let passwordpattern = RegExp('^(?=.*[A-Z])(?=.*[0-9])(?=.*[-+_!@#$%^&*.,?{}()<>])[A-Za-z0-9-+_!@#$%^&*.,?]{8,}$');
     if (passwordpattern.test(pwd.value))
         passworderror.textContent = ' ';
     else
